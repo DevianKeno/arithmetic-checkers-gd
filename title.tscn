@@ -1,0 +1,110 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd0jtd7aaeuqr"]
+
+[ext_resource type="Texture2D" uid="uid://cu3n7qje54lh4" path="res://assets/ui/title.png" id="1_bl4ds"]
+[ext_resource type="Texture2D" uid="uid://7gcr7us6ni16" path="res://assets/ui/logo.png" id="2_lylwi"]
+
+[node name="Title" type="Node2D"]
+
+[node name="Background Color" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.384314, 0.494118, 0.607843, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Main (Frame Controller)" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 300.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Inactive Frames (Frame Controller)" type="Control" parent="Main (Frame Controller)"]
+anchors_preset = 0
+offset_left = 1620.0
+offset_right = 3240.0
+offset_bottom = 1080.0
+
+[node name="Play (Frame)" type="Control" parent="Main (Frame Controller)/Inactive Frames (Frame Controller)"]
+layout_mode = 2
+anchors_preset = 0
+offset_right = 1620.0
+offset_bottom = 1080.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="Main (Frame Controller)/Inactive Frames (Frame Controller)/Play (Frame)"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Sprite2D" parent="Main (Frame Controller)/Inactive Frames (Frame Controller)/Play (Frame)/CenterContainer"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_bl4ds")
+
+[node name="Title (Frame)" type="Control" parent="Main (Frame Controller)"]
+layout_mode = 2
+anchors_preset = 0
+offset_right = 1620.0
+offset_bottom = 1080.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="Main (Frame Controller)/Title (Frame)"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Sprite2D" parent="Main (Frame Controller)/Title (Frame)/CenterContainer"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_bl4ds")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sidebar" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 300.0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Sidebar Color" type="ColorRect" parent="CanvasLayer/Sidebar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.172549, 0.270588, 0.368627, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Sidebar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Sidebar/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Sidebar/VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("2_lylwi")
+expand_mode = 1
